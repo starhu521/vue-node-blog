@@ -92,7 +92,10 @@
             submitForm(formName) {
                 this.loading = true;
                 if (!this.info.markdown) {
-                    this.$message.warn('请填写文章内容')
+                    this.$message({
+                        type: 'warning',
+                        message: '请填写文章内容'
+                    })
                     return
                 }
                 this.$refs[formName].validate( async (valid) => {
@@ -105,9 +108,6 @@
                         }catch(e) {
                             this.loading = false
                         }
-                        
-
-                        
                     } else {
                         console.log('error submit!!');
                         this.loading = false;
@@ -141,8 +141,6 @@
         }
         .left-item {
             text-align: left;
-        }
-        .form {
         }
         .submit {
             width: 100px;
