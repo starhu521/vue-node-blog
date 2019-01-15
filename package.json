@@ -11,7 +11,7 @@
     "analyz:admin": "cross-env analyz_npm_config_report=true npm run build:admin",
     "analyz:client": "cross-env analyz_npm_config_report=true npm run build:client",
     "server": "cross-env NODE_ENV=development nodemon code/server/index.js",
-    "start": "pm2 start code/server/index.js",
+    "start": "cross-env NODE_ENV=production pm2 start code/server/index.js",
     "stop": "pm2 stop code/server/index.js",
     "restart": "pm2 restart code/server/index.js"
   },
